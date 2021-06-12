@@ -14,11 +14,16 @@ struct ScoreView: View {
     
     var body: some View {
         ZStack {
-            Color.yellow
+            LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
             VStack {
                 Text("Your score was:")
                 Text("\(score)/\(totalScore)")
+                    .bold()
             }
+            .padding()
+            .background(Color.white)
+            .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+            .cornerRadius(10)
         }
     }
 }
