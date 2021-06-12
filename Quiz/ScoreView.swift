@@ -12,6 +12,8 @@ struct ScoreView: View {
     var score: Int
     var totalScore: Int
     
+    @Environment(\.openURL) var openURL
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -19,6 +21,11 @@ struct ScoreView: View {
                 Text("Your score was:")
                 Text("\(score)/\(totalScore)")
                     .bold()
+                
+                // im such a great contributor
+                Button("Learn More") {
+                    openURL(URL(string: "https://www.youtube.com/watch?v=dQw4w9WgXcQ")!)
+                }
             }
             .padding()
             .background(Color.white)
